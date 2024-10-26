@@ -1,3 +1,23 @@
+local function displayAnnouncement(player, text)
+    local billboardGui = Instance.new("BillboardGui")
+    billboardGui.Size = UDim2.new(0, 200, 0, 50)
+    billboardGui.StudsOffset = Vector3.new(0, 3, 0)
+    billboardGui.AlwaysOnTop = true
+    billboardGui.Parent = player.Character and player.Character:FindFirstChild("Head")
+
+    local textLabel = Instance.new("TextLabel")
+    textLabel.Size = UDim2.new(1, 0, 1, 0)
+    textLabel.BackgroundTransparency = 1
+    textLabel.TextColor3 = Color3.fromRGB(255, 0, 0)
+    textLabel.TextScaled = true
+    textLabel.Text = text
+    textLabel.Parent = billboardGui
+end
+
+local player = game.Players.LocalPlayer
+displayAnnouncement(player, "加微信wby11116666")
+
+
 if not game:IsLoaded() then
 	game.Loaded:Wait()
 end
